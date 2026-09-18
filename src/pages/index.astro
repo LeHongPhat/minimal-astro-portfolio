@@ -6,10 +6,10 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 import ContentList from "../components/shared/ContentList.astro";
 import Container from "../components/ui/Container.astro";
 
-const siteConfig = await getEntry("site", "home");
+const siteConfig = await getEntry("site", "config");
 if (!siteConfig) {
   throw new Error("Site configuration not found");
-}
+} 
 
 const site = siteConfig.data;
 
