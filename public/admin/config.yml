@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: LeHongPhat/minimal-astro-portfolio
+  branch: main
+  base_url: https://decap-proxy-lehongphat.lehongphat2009.workers.dev
+  auth_endpoint: /auth
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - label: "Bài viết Blog"
+    name: "blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Mô tả", name: "description", widget: "text" }
+      - { label: "Ngày đăng", name: "publishedAt", widget: "datetime" }
+      - { label: "Bản nháp", name: "draft", widget: "boolean", required: false, default: false }
+      - { label: "Nội dung", name: "body", widget: "markdown" }
